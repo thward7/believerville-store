@@ -21,7 +21,7 @@ const Header = () => (
         Believerville Store
       </a>
       <a
-        className='hidden hidden text-2xl font-bold text-white max-sm:block'
+        className='hidden text-2xl font-bold text-white max-sm:block'
         href={import.meta.env.BASE_URL}
       >
         BS
