@@ -15,10 +15,16 @@ const Header = () => (
   <Navbar position='static' maxWidth='xl' className='bg-zinc-900 py-4'>
     <NavbarBrand className='cursor-pointer'>
       <a
-        className='text-2xl font-bold text-white'
+        className='text-2xl font-bold text-white max-sm:hidden'
         href={import.meta.env.BASE_URL}
       >
         Believerville Store
+      </a>
+      <a
+        className='hidden hidden text-2xl font-bold text-white max-sm:block'
+        href={import.meta.env.BASE_URL}
+      >
+        BS
       </a>
     </NavbarBrand>
     <NavbarContent justify='end'>

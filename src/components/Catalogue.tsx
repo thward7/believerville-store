@@ -36,7 +36,7 @@ const Catalogue = () => {
       <div>
         <h1 className='text-4xl font-bold'>Каталог игр</h1>
       </div>
-      <div className='grid grid-cols-7 gap-2 py-4'>
+      <div className='grid grid-cols-7 gap-2 py-4 max-lg:grid-cols-5'>
         <div className='col-span-2 flex items-center'>
           <p className='text-base'>Найдено {filteredCards.length} игр</p>
         </div>
