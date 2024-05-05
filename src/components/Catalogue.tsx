@@ -13,12 +13,10 @@ const Catalogue = () => {
   const [searchInputPriceTo, setSearchInputPriceTo] = useState('')
 
   useEffect(() => {
-    axios
-      .get('http://believerville.store:5288/api/DealsControllers')
-      .then((response) => {
-        setCards(response.data)
-        setFilteredCards(response.data)
-      })
+    axios.get(import.meta.env.VITE_REQUEST_MOCKAPI_URL).then((response) => {
+      setCards(response.data)
+      setFilteredCards(response.data)
+    })
   }, [])
 
   useEffect(() => {
@@ -53,9 +51,13 @@ const Catalogue = () => {
       <div className='grid grid-cols-7 gap-6 py-4'>
         <div className='col-span-4 lg:col-span-5'>
           <div className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4'>
-            {filteredCards.map((card) => (
-              <Card card={card} />
-            ))}
+            {filteredCards.length > 0 ? (
+              filteredCards.map((card) => <Card card={card} />)
+            ) : (
+              <div className='col-span-4 text-2xl font-bold'>
+                По вашему запросу ничего не нашлось.
+              </div>
+            )}
           </div>
         </div>
         <div className='sticky top-2 col-span-3 flex h-screen flex-col space-y-4 lg:col-span-2'>

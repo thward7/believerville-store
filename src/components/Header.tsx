@@ -14,7 +14,10 @@ import IconVK from '../assets/icon-vk.svg'
 const Header = () => (
   <Navbar position='static' maxWidth='xl' className='bg-zinc-900 py-4'>
     <NavbarBrand className='cursor-pointer'>
-      <a className='text-2xl font-bold text-white' href='/'>
+      <a
+        className='text-2xl font-bold text-white'
+        href={import.meta.env.BASE_URL}
+      >
         Believerville Store
       </a>
     </NavbarBrand>
